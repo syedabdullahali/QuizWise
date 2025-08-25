@@ -25,9 +25,6 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
-      - name: Deploy with Vercel
-        run: npx vercel ./quiz-wise --prod --yes \
-         --token=${{ secrets.VERCEL_TOKEN }} \
-         --org ${{ secrets.VERCEL_ORG_ID }} \
-         --project ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: Deploy to Vercel
+        run: npx vercel ./quiz-wise --prod --yes --token=${{ secrets.VERCEL_TOKEN }} --org=${{ secrets.VERCEL_ORG_ID }} --project=${{ secrets.VERCEL_PROJECT_ID }}
 
